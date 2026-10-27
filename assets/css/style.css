@@ -125,6 +125,16 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .feed-name { flex-shrink: 0; width: 10rem; }
+.feed-arrow {
+  width: 0.42em;
+  height: 0.42em;
+  margin-left: 0.25em;
+  vertical-align: 0.55em;
+  color: var(--muted);
+  transition: color 0.15s, transform 0.15s;
+}
+.feed-name:hover { opacity: 1; }
+.feed-name:hover .feed-arrow { color: var(--accent); transform: translate(1px, -1px); }
 .feed-desc { color: var(--text); font-style: italic; }
 
 .feed-projects .feed-item { align-items: center; padding: 0.8rem 0; }
