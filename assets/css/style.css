@@ -113,7 +113,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Post */
 
-.post-header { margin-bottom: 4.5rem; text-align: center; }
+.post-header { margin-bottom: 4.5rem; }
 
 .post-meta {
   margin-bottom: 1rem;
@@ -136,15 +136,14 @@ img { max-width: 100%; height: auto; display: block; }
 
 .content { font-size: 1.7rem; word-break: break-word; }
 
-.content > * + * { margin-top: 1.6em; }
+.content > * + * { margin-top: 1.25em; }
 .content > :is(h2, h3, h4) { margin-top: 1.6em; }
 .content > :is(h2, h3, h4) + * { margin-top: 0.8em; }
-.content > :is(blockquote, hr, pre, .highlighter-rouge),
-.content > :is(blockquote, hr, pre, .highlighter-rouge) + * { margin-top: 2.4em; }
 
-.content h2 { font-size: 1.6em; }
-.content h3 { font-size: 1.4em; }
-.content h4 { font-size: 1.2em; }
+.content :is(h2, h3, h4) { font-weight: 500; }
+.content h2 { font-size: 1.4em; }
+.content h3 { font-size: 1.2em; }
+.content h4 { font-size: 1.05em; }
 
 .content a {
   color: var(--accent);
@@ -153,12 +152,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .content :is(ul, ol) { padding-left: 2.8rem; margin-bottom: 0; }
-.content li + li, .content li :is(ul, ol) { margin-top: 0.8rem; }
+.content li + li, .content li :is(ul, ol) { margin-top: 0.25em; }
 
 .content blockquote {
   padding-left: 2rem;
   border-left: 3px solid var(--accent);
-  font-style: italic;
 }
 
 .content hr {
@@ -169,7 +167,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .content code {
   font-family: var(--font-mono);
-  font-size: 0.88em;
+  font-size: 0.85em;
   padding: 0.1em 0.35em;
   background: var(--code-bg);
   border-radius: 3px;
@@ -180,9 +178,10 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 2rem;
   background: var(--code-bg);
   border-radius: 4px;
+  font-size: 0.85em;
   line-height: 1.5;
 }
-.content pre code { padding: 0; background: none; font-size: 1.5rem; }
+.content pre code { padding: 0; background: none; font-size: 1em; }
 
 .content figcaption, .content img + em {
   display: block;
@@ -203,7 +202,12 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 767px) {
   .post-header { margin-bottom: 3rem; }
-  .post-title { font-size: 2.6rem; }
+  .post-title { font-size: 3rem; }
   .post-excerpt { font-size: 1.7rem; }
   .feed-item { flex-direction: column; gap: 0.4rem; }
+}
+
+@media (max-width: 600px) {
+  body { line-height: 1.5; }
+  .content pre { padding: 1.4rem 1.6rem; }
 }
