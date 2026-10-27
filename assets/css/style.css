@@ -250,6 +250,7 @@ img { max-width: 100%; height: auto; display: block; }
   .post-title { font-size: 3rem; }
   .post-excerpt { font-size: 1.7rem; }
   .feed-item { flex-direction: column; gap: 0.4rem; }
+  .feed-projects .feed-item { align-items: flex-start; gap: 0.2rem; }
 }
 
 @media (max-width: 600px) {
