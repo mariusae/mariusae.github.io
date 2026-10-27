@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
-<section class="feed canvas">
+<section class="feed feed-projects canvas">
   <h2 class="feed-heading">Current projects</h2>
   <div class="feed-item">
     <a class="feed-title feed-name" href="{{ '/apex/' | relative_url }}">Apex</a>

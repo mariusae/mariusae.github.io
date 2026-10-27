@@ -125,7 +125,10 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .feed-name { flex-shrink: 0; width: 10rem; }
-.feed-desc { color: var(--text); }
+.feed-desc { color: var(--text); font-style: italic; }
+
+.feed-projects .feed-item { padding: 0.8rem 0; }
+.feed-projects .feed-item + .feed-item { border-top: 0; }
 
 /* Post */
 
