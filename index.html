@@ -3,12 +3,24 @@ layout: default
 ---
 {% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
 <section class="feed canvas">
+  <h2 class="feed-heading">Current projects</h2>
+  <div class="feed-item">
+    <a class="feed-title" href="{{ '/apex/' | relative_url }}">Apex</a>
+    <span class="feed-desc">what does a modern <a href="https://9p.io/sys/doc/acme/acme.html">Acme</a> look like?</span>
+  </div>
+  <div class="feed-item">
+    <a class="feed-title" href="{{ '/manifold/' | relative_url }}">Manifold</a>
+    <span class="feed-desc">your workbench is a wiki</span>
+  </div>
+</section>
+{% if posts.size > 0 %}
+<section class="feed canvas">
+  <h2 class="feed-heading">Writing</h2>
   {% for post in posts %}
   <a class="feed-item" href="{{ post.url | relative_url }}">
     <time class="feed-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
     <span class="feed-title">{{ post.title }}</span>
   </a>
-  {% else %}
-  <p class="feed-empty">Nothing here yet.</p>
   {% endfor %}
 </section>
+{% endif %}
