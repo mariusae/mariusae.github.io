@@ -128,7 +128,7 @@ img { max-width: 100%; height: auto; display: block; }
 .post-back {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.9rem;
   color: inherit;
 }
 .post-back:hover { opacity: 1; color: var(--heading); }
