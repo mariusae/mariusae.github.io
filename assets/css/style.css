@@ -8,6 +8,8 @@
   --code-bg: #f6f6f6;
   --bg: #fff;
   --accent: #1264a3;
+  --link-bg: rgba(29, 155, 209, 0.1);
+  --link-bg-hover: rgba(29, 155, 209, 0.2);
   --font-sans: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --font-display: Fraunces, Georgia, serif;
   --font-mono: "Source Code Pro", Menlo, Consolas, Monaco, "Liberation Mono", monospace;
@@ -24,6 +26,8 @@
     --code-bg: #1e1e1e;
     --bg: #121212;
     --accent: #1d9bd1;
+    --link-bg: rgba(29, 155, 209, 0.14);
+    --link-bg-hover: rgba(29, 155, 209, 0.26);
   }
 }
 
@@ -145,15 +149,19 @@ img { max-width: 100%; height: auto; display: block; }
 .content h4 { font-size: 1.05em; }
 
 .content a {
+  padding: 0 0.15em;
+  border-radius: 3px;
+  background: var(--link-bg);
   color: var(--accent);
   text-decoration: none;
-  text-decoration-skip-ink: auto;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .content :is(ul, ol) { padding-left: 2.8rem; margin-bottom: 0; }
 .content li + li, .content li :is(ul, ol) { margin-top: 0.25em; }
 
-.content a:hover { opacity: 1; text-decoration: underline; }
+.content a:hover { opacity: 1; background: var(--link-bg-hover); }
 
 .content blockquote {
   padding-left: 2rem;
