@@ -160,6 +160,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-left: 3px solid var(--accent);
   font-family: var(--font-display);
   font-style: italic;
+  font-weight: 350;
   font-variation-settings: "SOFT" 50, "WONK" 0;
 }
 
@@ -213,5 +214,5 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 600px) {
   body { line-height: 1.5; }
-  .content pre { padding: 1.4rem 1.6rem; }
+  .content pre { padding: 1.4rem 1.6rem; font-size: 0.82em; }
 }
