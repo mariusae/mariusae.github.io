@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
+{% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
 <section class="feed canvas">
-  {% for post in site.posts %}
+  {% for post in posts %}
   <a class="feed-item" href="{{ post.url | relative_url }}">
     <time class="feed-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
     <span class="feed-title">{{ post.title }}</span>

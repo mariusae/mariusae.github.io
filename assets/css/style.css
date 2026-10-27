@@ -132,6 +132,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: inherit;
 }
 .post-back:hover { opacity: 1; color: var(--heading); }
+.post-draft { margin-left: 1rem; color: var(--accent); }
 
 .post-title {
   font-size: 4rem;
