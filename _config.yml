@@ -1,0 +1,16 @@
+title: mutable
+description: Writing by Marius Eriksen.
+author: Marius Eriksen
+url: https://mutable.org
+
+permalink: /:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md

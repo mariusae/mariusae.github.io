@@ -1,11 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mutable</title>
-</head>
-<body>
-  <h1>Hello, world</h1>
-</body>
-</html>
+---
+layout: default
+---
+<section class="feed canvas">
+  {% for post in site.posts %}
+  <a class="feed-item" href="{{ post.url | relative_url }}">
+    <time class="feed-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+    <span class="feed-title">{{ post.title }}</span>
+  </a>
+  {% else %}
+  <p class="feed-empty">Nothing here yet.</p>
+  {% endfor %}
+</section>

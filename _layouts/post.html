@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{% assign words = content | number_of_words %}
+{% assign minutes = words | divided_by: 220 | at_least: 1 %}
+<article class="post">
+  <header class="post-header canvas">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%b %-d, %Y' }}</time>
+      <span>{{ minutes }} min read</span>
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.excerpt_text %}<p class="post-excerpt">{{ page.excerpt_text }}</p>{% endif %}
+  </header>
+  <div class="content canvas">
+    {{ content }}
+  </div>
+</article>
