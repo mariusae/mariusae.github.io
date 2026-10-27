@@ -9,7 +9,7 @@
   --bg: #fff;
   --accent: #2a5db0;
   --font-sans: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-mono: Menlo, Consolas, Monaco, "Liberation Mono", monospace;
+  --font-mono: "IBM Plex Mono", Menlo, Consolas, Monaco, "Liberation Mono", monospace;
   --measure: 720px;
   --gap: 2.4rem;
 }
