@@ -87,13 +87,12 @@ img { max-width: 100%; height: auto; display: block; }
 .feed + .feed { margin-top: 6rem; }
 
 .feed-heading {
-  margin-bottom: 0.5rem;
   color: var(--meta);
   font-family: var(--font-sans);
   font-size: 1.2rem;
   font-variation-settings: normal;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -126,16 +125,22 @@ img { max-width: 100%; height: auto; display: block; }
 
 .feed-name { flex-shrink: 0; width: 11rem; white-space: nowrap; }
 .feed-arrow {
-  width: 0.5em;
-  height: 0.5em;
-  margin-left: 0.2em;
+  width: 0.45em;
+  height: 0.45em;
+  margin-left: 0.12em;
   vertical-align: baseline;
-  color: var(--muted);
+  color: var(--meta);
   transition: color 0.15s, transform 0.15s;
 }
-.feed-name:hover { opacity: 1; }
+.feed-name:hover, .feed-name:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.feed-name:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 .feed-name:hover .feed-arrow { color: var(--accent); transform: translate(1px, -1px); }
-.feed-desc { color: var(--text); font-style: italic; }
+.feed-desc { color: var(--text); font-size: 1.5rem; font-style: italic; }
 
 .feed-projects .feed-item { align-items: center; padding: 0.8rem 0; }
 .feed-projects .feed-item + .feed-item { border-top: 0; }
@@ -260,7 +265,7 @@ img { max-width: 100%; height: auto; display: block; }
   .post-title { font-size: 3rem; }
   .post-excerpt { font-size: 1.7rem; }
   .feed-item { flex-direction: column; gap: 0.4rem; }
-  .feed-projects .feed-item { align-items: flex-start; gap: 0.2rem; }
+  .feed-projects .feed-item { align-items: flex-start; gap: 0.6rem; padding: 1.2rem 0; }
   .feed-name { width: auto; }
 }
 
