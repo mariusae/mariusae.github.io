@@ -126,10 +126,10 @@ img { max-width: 100%; height: auto; display: block; }
 
 .feed-name { flex-shrink: 0; width: 11rem; white-space: nowrap; }
 .feed-arrow {
-  width: 0.42em;
-  height: 0.42em;
-  margin-left: 0.25em;
-  vertical-align: 0.55em;
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 0.2em;
+  vertical-align: baseline;
   color: var(--muted);
   transition: color 0.15s, transform 0.15s;
 }
