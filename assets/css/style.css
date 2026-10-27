@@ -124,6 +124,7 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: -0.005em;
 }
 
+.feed-name { flex-shrink: 0; width: 10rem; }
 .feed-desc { color: var(--text); }
 
 /* Post */
