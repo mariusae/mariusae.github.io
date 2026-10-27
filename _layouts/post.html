@@ -1,11 +1,13 @@
 ---
 layout: default
 ---
-<nav class="site-mark canvas"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></nav>
 <article class="post">
   <header class="post-header canvas">
     <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%b %-d, %Y' }}</time>
+      <a class="post-back" href="{{ '/' | relative_url }}" aria-label="All posts">
+        <svg viewBox="0 0 8 12" width="6" height="9" aria-hidden="true"><path d="M6.5 1.5 2 6l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%b %-d, %Y' }}</time>
+      </a>
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
     {% if page.excerpt_text %}<p class="post-excerpt">{{ page.excerpt_text }}</p>{% endif %}
