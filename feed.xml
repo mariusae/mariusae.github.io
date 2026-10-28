@@ -9,7 +9,7 @@ layout: null
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ '/feed.xml' | absolute_url }}</id>
   <title type="html">{{ site.title | xml_escape }}</title>
-  {%- if site.description %}
+  {%- if site.description and site.description != "" %}
   <subtitle>{{ site.description | xml_escape }}</subtitle>
   {%- endif %}
   <author><name>{{ site.author | xml_escape }}</name></author>
