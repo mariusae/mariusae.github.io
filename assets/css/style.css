@@ -88,7 +88,7 @@ img { max-width: 100%; height: auto; display: block; }
 .mark { margin-top: 3vmin; }
 .mark-moth {
   display: block;
-  height: 40px;
+  height: 60px;
   aspect-ratio: 1025 / 449;
   background: var(--heading);
   -webkit-mask: url(../moth.svg) no-repeat center / contain;
