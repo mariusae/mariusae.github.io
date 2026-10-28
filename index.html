@@ -10,7 +10,8 @@ layout: default
     var marks = {{ site.data.marks | jsonify }}, key = "mutable-mark", i = null;
     try { var s = sessionStorage.getItem(key); if (s !== null) i = parseInt(s, 10); } catch (e) {}
     if (!(i >= 0 && i < marks.length)) {
-      i = Math.floor(Math.random() * marks.length);
+      try { i = crypto.getRandomValues(new Uint32Array(1))[0] % marks.length; }
+      catch (e) { i = Math.floor(Math.random() * marks.length); }
       try { sessionStorage.setItem(key, i); } catch (e) {}
     }
     var m = marks[i], el = document.getElementById("mark");
