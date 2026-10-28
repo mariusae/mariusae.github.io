@@ -2,7 +2,24 @@
 layout: default
 ---
 {% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
-<div class="mark canvas"><span class="mark-moth" role="img" aria-label="Peppered moth, after Edward Newman (1869)"></span></div>
+{% assign mark = site.data.marks[0] %}
+<div class="mark canvas"><span class="mark-img" id="mark" role="img" aria-label="{{ mark.label }}" style="--u: url({{ '/assets/marks/' | append: mark.file | relative_url }}); --r: {{ mark.ratio }}; --h: {{ mark.height }}px"></span></div>
+<script>
+  // Show a different specimen per visit, kept stable for the session.
+  (function () {
+    var marks = {{ site.data.marks | jsonify }}, key = "mutable-mark", i = null;
+    try { var s = sessionStorage.getItem(key); if (s !== null) i = parseInt(s, 10); } catch (e) {}
+    if (!(i >= 0 && i < marks.length)) {
+      i = Math.floor(Math.random() * marks.length);
+      try { sessionStorage.setItem(key, i); } catch (e) {}
+    }
+    var m = marks[i], el = document.getElementById("mark");
+    el.style.setProperty("--u", "url({{ '/assets/marks/' | relative_url }}" + m.file + ")");
+    el.style.setProperty("--r", m.ratio);
+    el.style.setProperty("--h", m.height + "px");
+    el.setAttribute("aria-label", m.label);
+  })();
+</script>
 <section class="feed feed-projects canvas">
   <h2 class="feed-heading">Current projects</h2>
   <div class="feed-item">

@@ -83,18 +83,18 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .site-foot a { color: var(--muted); }
 
-/* Home page mark: the peppered moth from Newman's British Moths (1869). */
+/* Home page mark: a rotating 19th-century engraving (see _data/marks.yml). */
 
 .mark { margin-top: 3vmin; }
-.mark-moth {
+.mark-img {
   display: block;
-  height: 90px;
-  aspect-ratio: 1025 / 449;
+  height: var(--h);
+  aspect-ratio: var(--r);
   background: var(--heading);
-  -webkit-mask: url(../moth.svg) no-repeat center / contain;
-  mask: url(../moth.svg) no-repeat center / contain;
+  -webkit-mask: var(--u) no-repeat left bottom / contain;
+  mask: var(--u) no-repeat left bottom / contain;
 }
-.mark + .feed { margin-top: 4rem; }
+.mark + script + .feed { margin-top: 2.6rem; }
 
 /* Home page lists */
 

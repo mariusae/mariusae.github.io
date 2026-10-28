@@ -1,0 +1,24 @@
+# Home page specimens. One is picked at random per visit; the first is the
+# default when JavaScript is off. Each entry: an SVG in assets/marks/, its
+# width/height ratio (from the viewBox), and a display height in px chosen so
+# the specimens carry similar visual weight.
+- file: moth-newman.svg
+  ratio: 2.283
+  height: 90
+  label: Peppered moth, after Edward Newman, An Illustrated Natural History of British Moths (1869)
+- file: cicada-figuier.svg
+  ratio: 0.443
+  height: 160
+  label: Cicada, after Louis Figuier, The Insect World (1868)
+- file: nautilus-figuier.svg
+  ratio: 1.364
+  height: 115
+  label: Chambered nautilus in section, after Louis Figuier, The Ocean World (1868)
+- file: octopus-figuier.svg
+  ratio: 1.088
+  height: 125
+  label: Octopus, after Louis Figuier, The Ocean World (1868)
+- file: cuttlefish-figuier.svg
+  ratio: 0.573
+  height: 150
+  label: Cuttlefish, after Louis Figuier, The Ocean World (1868)
