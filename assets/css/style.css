@@ -76,7 +76,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .site-foot {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
   padding: 4rem 0;
   color: var(--muted);
   font-size: 1.3rem;
