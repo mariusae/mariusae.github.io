@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-{% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
+{% assign posts = site.posts | where_exp: "p", "p.draft != true" | where_exp: "p", "p.external == nil" %}
+{% assign elsewhere = site.posts | where_exp: "p", "p.external" %}
 {% assign mark = site.data.marks[0] %}
 <div class="mark canvas"><span class="mark-img" id="mark" role="img" aria-label="{{ mark.label }}" style="--u: url({{ '/assets/marks/' | append: mark.file | relative_url }}); --r: {{ mark.ratio }}; --h: {{ mark.height }}px"></span></div>
 <script>
@@ -40,9 +41,21 @@ layout: default
 <section class="feed canvas">
   <h2 class="feed-heading">Writing</h2>
   {% for post in posts %}
-  <a class="feed-item" href="{% if post.external %}{{ post.external }}{% else %}{{ post.url | relative_url }}{% endif %}">
-    {% if post.year_only %}<time class="feed-date" datetime="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }}</time>{% else %}<time class="feed-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>{% endif %}
-    <span class="feed-title">{{ post.title }}{% if post.external %}<svg class="feed-arrow" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1.5h5.5V7M8.5 1.5 1.5 8.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endif %}</span>
+  <a class="feed-item" href="{{ post.url | relative_url }}">
+    <time class="feed-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+    <span class="feed-title">{{ post.title }}</span>
+  </a>
+  {% endfor %}
+</section>
+{% endif %}
+{% if elsewhere.size > 0 %}
+<section class="feed canvas">
+  <h2 class="feed-heading">Elsewhere</h2>
+  {% for post in elsewhere %}
+  {% case post.precision %}{% when "year" %}{% assign fmt = '%Y' %}{% when "month" %}{% assign fmt = '%b %Y' %}{% else %}{% assign fmt = '%b %-d, %Y' %}{% endcase %}
+  <a class="feed-item" href="{{ post.external }}">
+    <time class="feed-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: fmt }}</time>
+    <span class="feed-main"><span class="feed-title">{{ post.title }}<svg class="feed-arrow" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1.5h5.5V7M8.5 1.5 1.5 8.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>{% if post.venue %}<span class="feed-venue">{{ post.venue }}</span>{% endif %}</span>
   </a>
   {% endfor %}
 </section>

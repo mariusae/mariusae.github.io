@@ -29,9 +29,9 @@ draft: true
 
 A draft is built and reachable at its URL (marked "Draft" next to the date), but it's left off the home page and the feed, and asks search engines not to index it. To publish, delete the `draft` line and push. The repository is public, so drafts are readable on GitHub too.
 
-### Writing published elsewhere
+### Work published elsewhere
 
-To list an essay hosted elsewhere, add a post with `layout: external` and its address:
+To list a paper, talk or essay hosted elsewhere, add a post with `layout: external` and its address:
 
 ```markdown
 ---
@@ -41,9 +41,9 @@ external: https://monkey.org/~marius/redux.html
 ---
 ```
 
-If you only know the year, date the file January 1 and add `year_only: true`; the home page then shows just the year.
+Optional fields: `venue` (shown under the title, e.g. `"Talk, QCon San Francisco"`) and `precision: month` or `precision: year` when the exact day isn't known (date the file the 1st).
 
-It's listed on the home page by its date, with an arrow, and links straight out. Its mutable.org URL redirects there. It's left out of the feed.
+These are listed under "Elsewhere" on the home page by date, with an arrow, and link straight out; each one's mutable.org URL redirects there, and they're left out of the feed. Posts on this site are listed separately under "Writing".
 
 ## Layout
 

@@ -139,6 +139,9 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: -0.005em;
 }
 
+.feed-main { display: flex; flex-direction: column; gap: 0.3rem; }
+.feed-venue { color: var(--meta); font-size: 1.4rem; font-style: italic; }
+
 .feed-name { flex-shrink: 0; width: 11rem; white-space: nowrap; }
 .feed-arrow {
   width: 0.45em;
