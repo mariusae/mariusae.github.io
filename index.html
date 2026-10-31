@@ -40,9 +40,9 @@ layout: default
 <section class="feed canvas">
   <h2 class="feed-heading">Writing</h2>
   {% for post in posts %}
-  <a class="feed-item" href="{{ post.url | relative_url }}">
+  <a class="feed-item" href="{% if post.external %}{{ post.external }}{% else %}{{ post.url | relative_url }}{% endif %}">
     <time class="feed-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
-    <span class="feed-title">{{ post.title }}</span>
+    <span class="feed-title">{{ post.title }}{% if post.external %}<svg class="feed-arrow" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1.5h5.5V7M8.5 1.5 1.5 8.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endif %}</span>
   </a>
   {% endfor %}
 </section>

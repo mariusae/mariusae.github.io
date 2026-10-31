@@ -29,6 +29,20 @@ draft: true
 
 A draft is built and reachable at its URL (marked "Draft" next to the date), but it's left off the home page and the feed, and asks search engines not to index it. To publish, delete the `draft` line and push. The repository is public, so drafts are readable on GitHub too.
 
+### Writing published elsewhere
+
+To list an essay hosted elsewhere, add a post with `layout: external` and its address:
+
+```markdown
+---
+layout: external
+title: RPC Redux
+external: https://monkey.org/~marius/redux.html
+---
+```
+
+It's listed on the home page by its date, with an arrow, and links straight out. Its mutable.org URL redirects there. It's left out of the feed.
+
 ## Layout
 
 - `_layouts/` — page templates (`default`, `post`, and `page` for standalone pages like `about.md`)
