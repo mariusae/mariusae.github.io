@@ -31,7 +31,7 @@ A draft is built and reachable at its URL (marked "Draft" next to the date), but
 
 ## Layout
 
-- `_layouts/` — page templates (`default`, `post`)
+- `_layouts/` — page templates (`default`, `post`, and `page` for standalone pages like `about.md`)
 - `index.html` — the home page post list
 - `assets/css/style.css` — all styling
 - `_config.yml` — site settings

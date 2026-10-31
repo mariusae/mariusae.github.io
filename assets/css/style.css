@@ -225,6 +225,30 @@ img { max-width: 100%; height: auto; display: block; }
   outline: none;
 }
 
+.content .work li + li { margin-top: 0.9em; }
+
+/* About page timeline */
+
+.timeline { display: grid; gap: 1.6rem; }
+.tl-row { display: grid; grid-template-columns: 9rem 1fr; gap: 1.5rem; align-items: baseline; line-height: 1.4; }
+.tl-years {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.tl-place {
+  display: block;
+  color: var(--heading);
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 600;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+  letter-spacing: -0.005em;
+}
+.tl-what { display: block; margin-top: 0.2rem; color: var(--desc); font-size: 1.5rem; font-style: italic; }
+
 .content blockquote {
   padding-left: 2rem;
   border-left: 3px solid var(--accent);
@@ -283,6 +307,7 @@ img { max-width: 100%; height: auto; display: block; }
   .feed-item { flex-direction: column; gap: 0.4rem; }
   .feed-projects .feed-item { align-items: flex-start; gap: 0.6rem; padding: 0.9rem 0; }
   .feed-name { width: auto; }
+  .tl-row { grid-template-columns: 1fr; gap: 0.3rem; }
 }
 
 @media (max-width: 600px) {
