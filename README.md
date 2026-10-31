@@ -41,6 +41,8 @@ external: https://monkey.org/~marius/redux.html
 ---
 ```
 
+If you only know the year, date the file January 1 and add `year_only: true`; the home page then shows just the year.
+
 It's listed on the home page by its date, with an arrow, and links straight out. Its mutable.org URL redirects there. It's left out of the feed.
 
 ## Layout
