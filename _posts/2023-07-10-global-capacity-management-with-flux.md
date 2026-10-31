@@ -1,0 +1,5 @@
+---
+layout: external
+title: "Global Capacity Management With Flux"
+external: https://www.usenix.org/system/files/osdi23-eriksen.pdf
+---
