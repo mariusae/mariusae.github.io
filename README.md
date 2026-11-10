@@ -47,7 +47,7 @@ These are listed under "Elsewhere" on the home page by date, with an arrow, and 
 
 ## Layout
 
-- `_layouts/` — page templates (`default`, `post`, and `page` for standalone pages like `about.md`)
+- `_layouts/` — page templates (`default`, `post`, and `page` for standalone pages like `whoami.md`)
 - `index.html` — the home page post list
 - `assets/css/style.css` — all styling
 - `_config.yml` — site settings

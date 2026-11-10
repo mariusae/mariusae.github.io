@@ -2,7 +2,7 @@
 layout: page
 title: About
 heading: Marius Eriksen
-permalink: /about/
+permalink: /whoami/
 draft: true
 ---
 
